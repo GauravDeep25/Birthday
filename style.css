@@ -1,41 +1,39 @@
-/* Reset */
+/* Reset and base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Layout */
 html, body {
   height: 100%;
   width: 100%;
   overflow: hidden;
   font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #dc143c, #ffb6c1);
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #fbd4d4, #ffeaea); /* light crimson-pink */
 }
 
 /* Card */
 .card {
-  background-color: #ffffff; /* Solid white card */
-  color: #333;
+  background-color: #ffffff;
   border-radius: 20px;
   padding: 30px 20px;
+  max-width: 400px;
   width: 90%;
-  max-width: 380px;
   text-align: center;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  position: relative;
-  z-index: 2;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-/* Image & Border */
+/* Image */
 .image-container {
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
   margin: 0 auto 20px;
 }
 
@@ -53,8 +51,8 @@ html, body {
   position: absolute;
   top: -10px;
   left: -10px;
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border: 4px dashed crimson;
   border-radius: 50%;
   animation: rotate 10s linear infinite;
@@ -68,37 +66,25 @@ html, body {
 
 /* Countdown */
 .countdown {
-  font-size: 1.6em;
-  font-weight: bold;
-  color: crimson;
   background: #fff0f0;
+  color: crimson;
+  font-weight: bold;
+  font-size: 1.6em;
   padding: 12px 20px;
   border-radius: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
   box-shadow: 0 0 8px rgba(220, 20, 60, 0.15);
 }
 
 .countdown span {
-  animation: none; /* no pulsing for countdown text */
+  animation: none;
 }
 
-/* Messages */
-.wait-message {
-  font-size: 1em;
-  color: crimson;
-  margin-top: 10px;
-}
-
-.title {
-  color: crimson;
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
+/* Text */
 .quote {
   font-style: italic;
-  color: #555;
-  margin: 15px 0;
+  color: #444;
+  margin-bottom: 12px;
   font-size: 1.1em;
 }
 
@@ -108,10 +94,6 @@ html, body {
   line-height: 1.6;
 }
 
-.hidden {
-  display: none;
-}
-
 /* Responsive */
 @media (max-width: 500px) {
   .card {
@@ -119,25 +101,21 @@ html, body {
   }
 
   .image-container {
+    width: 140px;
+    height: 140px;
+  }
+
+  .rotating-border {
     width: 160px;
     height: 160px;
   }
 
-  .rotating-border {
-    width: 180px;
-    height: 180px;
-  }
-
   .countdown {
     font-size: 1.3em;
-    padding: 10px 16px;
   }
 
-  .quote, .message {
+  .quote,
+  .message {
     font-size: 0.95em;
-  }
-
-  .title {
-    font-size: 1.3em;
   }
 }
