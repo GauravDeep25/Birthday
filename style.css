@@ -14,22 +14,24 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #fcdcdc, #ffe6e6); /* light crimson pink gradient */
+  background: linear-gradient(135deg, #fbd4d4, #ffeaea); /* light crimson-pink */
 }
 
-/* Card Container */
+/* Card */
 .card {
-  background: #ffffff;
+  background-color: #ffffff; /* Solid white card */
+  color: #333;
   border-radius: 20px;
-  padding: 25px 20px;
+  padding: 30px 20px;
   width: 90%;
-  max-width: 370px;
+  max-width: 380px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  z-index: 1;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  position: relative;
+  z-index: 2;
 }
 
-/* Image Container */
+/* Image & Border */
 .image-container {
   position: relative;
   width: 200px;
@@ -42,12 +44,11 @@ html, body {
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  border: 4px solid #eee;
   z-index: 2;
   position: relative;
-  border: 4px solid #eee;
 }
 
-/* Rotating Border */
 .rotating-border {
   position: absolute;
   top: -10px;
@@ -65,7 +66,7 @@ html, body {
   100% { transform: rotate(360deg); }
 }
 
-/* Countdown Box */
+/* Countdown */
 .countdown {
   font-size: 1.6em;
   font-weight: bold;
@@ -78,30 +79,22 @@ html, body {
 }
 
 .countdown span {
-  display: inline-block;
-  animation: pulse 2s infinite;
+  animation: none; /* no pulsing for countdown text */
 }
 
-@keyframes pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-/* Wait Message */
+/* Messages */
 .wait-message {
   font-size: 1em;
   color: crimson;
   margin-top: 10px;
 }
 
-/* Title */
 .title {
   color: crimson;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-/* Quote and Message */
 .quote {
   font-style: italic;
   color: #555;
@@ -115,12 +108,11 @@ html, body {
   line-height: 1.6;
 }
 
-/* Hidden content */
 .hidden {
   display: none;
 }
 
-/* Responsive Tweaks */
+/* Responsive */
 @media (max-width: 500px) {
   .card {
     padding: 20px 15px;
