@@ -1,6 +1,6 @@
 const countdownText = document.getElementById('countdownText');
 
-// Set target date: 13 Nov 2025 00:00:00
+// Target Date: 13 Nov 2025
 const targetDate = new Date("2025-11-13T00:00:00");
 
 function updateCountdown() {
@@ -8,7 +8,7 @@ function updateCountdown() {
   const diff = targetDate - now;
 
   if (diff <= 0) {
-    countdownText.textContent = "🎉 The day is here!";
+    countdownText.textContent = "🎉 It's here!";
     return;
   }
 
@@ -21,4 +21,4 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1000);
-updateCountdown(); // Initial call
+updateCountdown();
