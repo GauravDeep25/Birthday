@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-/* Global layout */
+/* Layout */
 html, body {
   height: 100%;
   width: 100%;
@@ -14,40 +14,22 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, rgba(220, 20, 60, 0.4), rgba(255, 182, 193, 0.2));
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  background: linear-gradient(135deg, #fcdcdc, #ffe6e6); /* light crimson pink gradient */
 }
 
-/* Glassmorphism blur effect */
-body::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  background: rgba(255, 255, 255, 0.05);
-  z-index: 0;
-}
-
-/* Main card */
+/* Card Container */
 .card {
-  background: rgba(255, 255, 255, 0.12);
+  background: #ffffff;
   border-radius: 20px;
   padding: 25px 20px;
   width: 90%;
   max-width: 370px;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
-/* Image section */
+/* Image Container */
 .image-container {
   position: relative;
   width: 200px;
@@ -62,10 +44,10 @@ body::before {
   border-radius: 50%;
   z-index: 2;
   position: relative;
-  border: 4px solid rgba(255, 255, 255, 0.4);
+  border: 4px solid #eee;
 }
 
-/* Rotating circle */
+/* Rotating Border */
 .rotating-border {
   position: absolute;
   top: -10px;
@@ -83,16 +65,16 @@ body::before {
   100% { transform: rotate(360deg); }
 }
 
-/* Countdown timer */
+/* Countdown Box */
 .countdown {
   font-size: 1.6em;
   font-weight: bold;
-  color: white;
-  background: rgba(255, 255, 255, 0.1);
+  color: crimson;
+  background: #fff0f0;
   padding: 12px 20px;
   border-radius: 12px;
-  backdrop-filter: blur(6px);
   margin-bottom: 12px;
+  box-shadow: 0 0 8px rgba(220, 20, 60, 0.15);
 }
 
 .countdown span {
@@ -105,40 +87,40 @@ body::before {
   50% { transform: scale(1.1); }
 }
 
-/* Wait message */
+/* Wait Message */
 .wait-message {
   font-size: 1em;
-  color: #fff;
+  color: crimson;
   margin-top: 10px;
 }
 
-/* Heading */
+/* Title */
 .title {
-  color: white;
+  color: crimson;
   font-size: 1.5em;
   margin-bottom: 10px;
 }
 
-/* Quote and message */
+/* Quote and Message */
 .quote {
   font-style: italic;
-  color: #fff;
+  color: #555;
   margin: 15px 0;
   font-size: 1.1em;
 }
 
 .message {
   font-size: 1em;
-  color: #f8f8f8;
+  color: #333;
   line-height: 1.6;
 }
 
-/* Visibility toggle */
+/* Hidden content */
 .hidden {
   display: none;
 }
 
-/* Responsive support */
+/* Responsive Tweaks */
 @media (max-width: 500px) {
   .card {
     padding: 20px 15px;
