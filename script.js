@@ -1,14 +1,19 @@
-const countdownText = document.getElementById('countdownText');
+const countdownElement = document.getElementById('countdown');
+const mainContent = document.getElementById('mainContent');
+const waitMsg = document.getElementById('waitMsg');
 
-// Target Date: 13 Nov 2025
-const targetDate = new Date("2025-11-13T00:00:00");
+// Target date: 13 November 2025, 00:00:00
+const targetDate = new Date('2025-11-13T00:00:00');
 
 function updateCountdown() {
   const now = new Date();
   const diff = targetDate - now;
 
   if (diff <= 0) {
-    countdownText.textContent = "🎉 It's here!";
+    clearInterval(countdownInterval);
+    countdownElement.classList.add('hidden');
+    waitMsg.classList.add('hidden');
+    mainContent.classList.remove('hidden');
     return;
   }
 
@@ -17,8 +22,9 @@ function updateCountdown() {
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
 
-  countdownText.textContent = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownElement.innerHTML = `<span>${days}d ${hours}h ${minutes}m ${seconds}s</span>`;
 }
 
-setInterval(updateCountdown, 1000);
+// Initial call and set interval
 updateCountdown();
+const countdownInterval = setInterval(updateCountdown, 1000);
