@@ -3,7 +3,7 @@ const mainContent = document.getElementById('mainContent');
 const waitMsg = document.getElementById('waitMsg');
 
 // Target date: 13 November 2025, 00:00:00
-const targetDate = new Date('2025-11-1T00:00:00');
+const targetDate = new Date('2025-11-13T00:00:00');
 
 function updateCountdown() {
   const now = new Date();
